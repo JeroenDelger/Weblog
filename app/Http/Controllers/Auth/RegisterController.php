@@ -60,7 +60,7 @@ class RegisterController extends Controller
             'roles' => ['string']
             ]);
         }
-        
+
         /**
          * Create a new user instance after a valid registration.
          *
@@ -69,7 +69,7 @@ class RegisterController extends Controller
          */
         protected function create(array $data)
         {
- 
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -89,7 +89,7 @@ class RegisterController extends Controller
             Mail::to(request('email', $data))
             ->send(new RegisteredUser());
         }
-        
+
         elseif ($data['roles'] === 'ROLE_PREMIUM')
         {
             Mail::to(request('email', $data))

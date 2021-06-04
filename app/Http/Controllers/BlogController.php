@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Laravel\Cashier\Http\Controllers\WebhookController as CashierController;
 use App\Jobs\SendNewsletterMail;
 
+// todo: deze class verwijderen want wordt niet gebruikt?
 class WebhookController extends CashierController
 {
     /**
@@ -27,6 +28,7 @@ class WebhookController extends CashierController
 
 class BlogController extends Controller
 {
+    // todo: route-model binding toepassen
     public function blogview($id)
     {
         return view('blog', [
@@ -84,6 +86,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        // todo: zet validation rules in aparte request validator: https://laravel.com/docs/8.x/validation#form-request-validation
         $validated = request()->validate([
             'title' => 'required',
             'blog'  => 'required',

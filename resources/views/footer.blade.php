@@ -17,6 +17,7 @@
     @csrf
 </form>
 @endauth
+{{-- @auth starttag onbrbeekt? --}}
 
 @if(!Auth()->user())
 <a href="/register" id="FooterPremium">Register</a>
